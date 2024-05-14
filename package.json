@@ -11,7 +11,7 @@
     "url": "git+https://github.com/apiverve/starslookup-API.git"
   },
   "keywords": [
-    "stars lookup"," stars lookup api"," stars lookup tool"," stars lookup software"," stars lookup service"," stars lookup library"," stars lookup sdk"," stars lookup code"," stars lookup script"," stars lookup program"," stars lookup application"," stars lookup app"," stars lookup utility"," stars lookup helper"," stars lookup helper tool"," stars lookup helper software"," stars lookup helper service"," stars lookup helper library"," stars lookup helper sdk"," stars lookup helper code"," stars lookup helper script"," stars lookup helper program"," stars lookup helper application"," stars lookup helper app"," stars lookup helper tool"," stars lookup helper utility"," stars lookup helper"
+    "stars lookup","stars lookup api","stars lookup tool","stars lookup software","stars lookup service"
   ],
   "author": "APIVerve <hello@apiverve.com> (http://apiverve.com/)",
   "license": "MIT",
@@ -27,6 +27,6 @@
   "dependencies": {
     "node-fetch": "3.3.2",
     "promise": "^7.1.1",
-    "request": "^2.69.0"
+    "axios": "^0.15.3"
   }
 }
