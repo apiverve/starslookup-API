@@ -1,7 +1,7 @@
 Stars Lookup API
 ============
 
-Stars Lookup is a simple tool for looking up star data. It returns the star name, constellation, and more.
+Stars Lookup is a simple tool for looking up star data. It returns the star name, mass, diameter, and more.
 
 ![Build Status](https://img.shields.io/badge/build-passing-green)
 ![Code Climate](https://img.shields.io/badge/maintainability-B-purple)
