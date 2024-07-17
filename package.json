@@ -1,7 +1,7 @@
 {
   "name": "@apiverve/starslookup",
-  "version": "1.0.2",
-  "description": "Stars Lookup is a simple tool for looking up star data. It returns the star name, constellation, and more.",
+  "version": "1.0.3",
+  "description": "Stars Lookup is a simple tool for looking up star data. It returns the star name, mass, diameter, and more.",
   "main": "index.js",
   "scripts": {
     "test": "mocha"
