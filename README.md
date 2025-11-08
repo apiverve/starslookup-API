@@ -1,5 +1,4 @@
-Stars Lookup API
-============
+# Stars Lookup API
 
 Stars Lookup is a simple tool for looking up star data. It returns the star name, mass, diameter, and more.
 
@@ -7,54 +6,62 @@ Stars Lookup is a simple tool for looking up star data. It returns the star name
 ![Code Climate](https://img.shields.io/badge/maintainability-B-purple)
 ![Prod Ready](https://img.shields.io/badge/production-ready-blue)
 
-This is a Javascript Wrapper for the [Stars Lookup API](https://apiverve.com/marketplace/api/starslookup)
+This is a Javascript Wrapper for the [Stars Lookup API](https://apiverve.com/marketplace/starslookup)
 
 ---
 
 ## Installation
-	npm install @apiverve/starslookup --save
+
+Using npm:
+```shell
+npm install @apiverve/starslookup
+```
+
+Using yarn:
+```shell
+yarn add @apiverve/starslookup
+```
 
 ---
 
 ## Configuration
 
-Before using the starslookup API client, you have to setup your account and obtain your API Key.  
+Before using the Stars Lookup API client, you have to setup your account and obtain your API Key.
 You can get it by signing up at [https://apiverve.com](https://apiverve.com)
 
 ---
 
-## Usage
+## Quick Start
 
-The Stars Lookup API documentation is found here: [https://docs.apiverve.com/api/starslookup](https://docs.apiverve.com/api/starslookup).  
+[Get started with the Quick Start Guide](https://docs.apiverve.com/quickstart)
+
+The Stars Lookup API documentation is found here: [https://docs.apiverve.com/ref/starslookup](https://docs.apiverve.com/ref/starslookup).
 You can find parameters, example responses, and status codes documented here.
 
 ### Setup
 
-```
-var starslookupAPI = require('@apiverve/starslookup');
-var api = new starslookupAPI({
-    api_key: [YOUR_API_KEY],
-    secure: true //(Optional, defaults to true)
+```javascript
+const starslookupAPI = require('@apiverve/starslookup');
+const api = new starslookupAPI({
+    api_key: '[YOUR_API_KEY]'
 });
 ```
 
 ---
 
+## Usage
+
+---
 
 ### Perform Request
-Using the API client, you can perform requests to the API.
 
-###### Define Query
+Using the API is simple. All you have to do is make a request. The API will return a response with the data you requested.
 
-```
+```javascript
 var query = {
   name: "Sirius"
 };
-```
 
-###### Simple Request (using Callback)
-
-```
 api.execute(query, function (error, data) {
     if (error) {
         return console.error(error);
@@ -64,15 +71,58 @@ api.execute(query, function (error, data) {
 });
 ```
 
-###### Example Response
+---
 
+### Using Promises
+
+You can also use promises to make requests. The API returns a promise that you can use to handle the response.
+
+```javascript
+var query = {
+  name: "Sirius"
+};
+
+api.execute(query)
+    .then(data => {
+        console.log(data);
+    })
+    .catch(error => {
+        console.error(error);
+    });
 ```
+
+---
+
+### Using Async/Await
+
+You can also use async/await to make requests. The API returns a promise that you can use to handle the response.
+
+```javascript
+async function makeRequest() {
+    var query = {
+  name: "Sirius"
+};
+
+    try {
+        const data = await api.execute(query);
+        console.log(data);
+    } catch (error) {
+        console.error(error);
+    }
+}
+```
+
+---
+
+## Example Response
+
+```json
 {
   "status": "ok",
   "error": null,
   "data": {
     "starName": "Sirius",
-    "mass": 4.674385E+30,
+    "mass": 4.674385e+30,
     "diameter": 2825760,
     "galX": -5.895,
     "galY": -6.152,
@@ -81,8 +131,7 @@ api.execute(query, function (error, data) {
     "starType": "A1(V)",
     "temp": 9500,
     "color": "0xbaccff"
-  },
-  "code": 200
+  }
 }
 ```
 
@@ -95,6 +144,7 @@ Need any assistance? [Get in touch with Customer Support](https://apiverve.com/c
 ---
 
 ## Updates
+
 Stay up to date by following [@apiverveHQ](https://twitter.com/apiverveHQ) on Twitter.
 
 ---
