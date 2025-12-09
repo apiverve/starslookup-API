@@ -1,0 +1,74 @@
+openapi: 3.0.4
+info:
+  title: Stars Lookup
+  description: Stars Lookup is a simple tool for looking up star data. It returns the star name, mass, diameter, and more.
+  termsOfService: https://apiverve.com/terms/
+  contact:
+    name: APIVerve Support
+    email: hello@apiverve.com
+    url: https://apiverve.com/contact
+  version: 1.0.9
+externalDocs:
+  description: Learn more about APIVerve
+  url: https://docs.apiverve.com?utm_source=openapi
+servers:
+- url: https://api.apiverve.com/
+paths:
+  /v1/starslookup:
+    get:
+      summary: Lookup Star
+      description: Stars Lookup is a simple tool for looking up star data. It returns the star name, mass, diameter, and more.
+      operationId: starslookup
+      parameters:
+      - name: name
+        in: query
+        schema:
+          type: string
+        required: true
+        description: The name of the star for which you want to get the data (e.g., Sirius)
+        example: Sirius
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: status
+                  error:
+                    type: string
+                    description: error
+                  data:
+                    type: string
+                    description: data
+              example:
+                status: ok
+                error: 
+                data:
+                  starName: Sirius
+                  mass: 4.674385E+30
+                  diameter: 2825760
+                  galX: -5.895
+                  galY: -6.152
+                  galZ: -1.167
+                  dist: 8.6
+                  starType: A1(V)
+                  temp: 9500
+                  color: 0xbaccff
+        '401':
+          description: Your request was not authorized, or your API Key was invalid
+        '404':
+          description: Requested resource was not found
+        '500':
+          description: A server error has occured, try again later
+components:
+  securitySchemes:
+    api_key:
+      type: apiKey
+      name: x-api-key
+      in: header
+security:
+- api_key: []
